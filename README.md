@@ -2,20 +2,20 @@
 
 Implementations of classical option pricing models in Python, applied to real market data.
 
----
+------------------------------------------------------------------------
 
 ## Models
 
-- **Black-Scholes** — closed-form pricing for European calls and puts
-- **Monte Carlo** — GBM path simulation, converges to BS price as N → ∞
-- **Greeks** — Delta, Gamma, Theta, Vega, Rho via analytical derivatives
-- **Implied Volatility** — Newton-Raphson inversion of BS; volatility smile and surface from live data
+-   Black-Scholes — closed-form pricing for European calls and puts
+-   Monte Carlo — GBM path simulation, converges to BS price as N → ∞
+-   Greeks — Delta, Gamma, Theta, Vega, Rho via analytical derivatives
+-   Implied Volatility — Newton-Raphson inversion of BS; volatility smile and surface from live data
 
----
+------------------------------------------------------------------------
 
 ## Repo structure
 
-```
+```         
 ├── src/
 │   ├── black_scholes.py
 │   ├── greeks.py
@@ -30,35 +30,35 @@ Implementations of classical option pricing models in Python, applied to real ma
 
 `src/` contains pure functions with no side effects. Notebooks use these functions and show results, plots, and real market data via `yfinance`.
 
----
+------------------------------------------------------------------------
 
 ## Notebooks
 
-**01 — Black-Scholes:** price as a function of S, σ, and T. AAPL model price vs. market price.
+01 — Black-Scholes: price as a function of S, σ, and T. AAPL model price vs. market price.
 
-**02 — Monte Carlo:** simulated GBM paths, terminal price distribution, convergence to BS price.
+02 — Monte Carlo: simulated GBM paths, terminal price distribution, convergence to BS price.
 
-**03 — Greeks:** all five Greeks vs. S, Delta heatmap over S × T, Theta decay curve.
+03 — Greeks: all five Greeks vs. S, Delta heatmap over S × T, Theta decay curve.
 
-**04 — Implied Volatility:** Newton-Raphson solver verification, volatility smile, 3D volatility surface across expiries.
+04 — Implied Volatility: Newton-Raphson solver verification, volatility smile, 3D volatility surface across expiries.
 
----
+------------------------------------------------------------------------
 
 ## Key result
 
-Black-Scholes assumes constant volatility. Real market prices imply different σ for every strike — the **volatility smile**. This is one of the model's most well-known failure modes and visible directly from live option chains.
+Black-Scholes assumes constant volatility. Real market prices imply different σ for every strike — the volatility smile. This is one of the model's most well-known failure modes and visible directly from live option chains.
 
 ![Volatility Smile](notebooks/vol_smile.png)
 
----
+------------------------------------------------------------------------
 
 ## Setup
 
-```bash
+``` bash
 pip install -r requirements.txt
 ```
 
-```
+```         
 numpy
 scipy
 matplotlib
@@ -67,7 +67,7 @@ pandas
 jupyter
 ```
 
----
+------------------------------------------------------------------------
 
 ## Background
 
